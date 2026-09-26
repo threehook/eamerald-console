@@ -1,12 +1,12 @@
 import React, { PropsWithChildren, useEffect } from 'react'
 
-import { useTopazConfig } from '../../api/internal/config'
+import { useEameraldConfig } from '../../api/internal/config'
 import { InformationalError } from '../../lib/error/InformationalError'
 import { useShowError } from '../ErrorModalProvider'
 import { ConfigContext } from './hooks'
 
 const ConfigProvider: React.FC<PropsWithChildren> = ({ children }) => {
-  const { data: config, error } = useTopazConfig()
+  const { data: config, error } = useEameraldConfig()
   const showError = useShowError()
 
   useEffect(() => {

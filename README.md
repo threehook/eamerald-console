@@ -1,9 +1,9 @@
-# Topaz Console
+# Eamerald Console
 
-A modern web console for [Topaz](https://github.com/aserto-dev/topaz)
+A modern web console for [Eamerald](https://github.com/threehook/eamerald)
 
-[![codecov](https://codecov.io/gh/aserto-dev/topaz-console/branch/main/graph/badge.svg?token=V6F5G43JXU)](https://codecov.io/gh/aserto-dev/topaz-console)
-[![Tests](https://github.com/aserto-dev/topaz-console/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/aserto-dev/topaz-console/actions/workflows/tests.yml)
+[![codecov](https://codecov.io/gh/threehook/eamerald-console/branch/main/graph/badge.svg?token=V6F5G43JXU)](https://codecov.io/gh/threehook/eamerald-console)
+[![Tests](https://github.com/threehook/eamerald-console/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/threehook/eamerald-console/actions/workflows/tests.yml)
 [<img src="https://img.shields.io/badge/slack-@asertocommunity-yellow.svg?logo=slack">](https://www.aserto.com/slack)
 
 
@@ -15,8 +15,8 @@ A modern web console for [Topaz](https://github.com/aserto-dev/topaz)
 
 1. Clone the repository:
 ```bash
-git clone git@github.com:aserto-dev/topaz-console.git
-cd topaz-console
+git clone git@github.com:threehook/eamerald-console.git
+cd eamerald-console
 ```
 
 2. Install dependencies:
@@ -27,7 +27,7 @@ yarn install
 
 Check the .env` file
 ```sh
-VITE_REACT_APP_DISCOVERY_SERVICE_URL #topaz console service gateway address
+VITE_REACT_APP_DISCOVERY_SERVICE_URL #eamerald console service gateway address
 ```
 ## 🚀 Development
 
@@ -100,7 +100,7 @@ yarn test:coverage
 - **Formatting**: Prettier
 
 ## 📚 Documentation
-- [Topaz](https://www.topaz.sh/docs/getting-started)
+- [Eamerald](https://www.topaz.sh/docs/getting-started)
 - [React Documentation](https://react.dev/)
 - [TypeScript Documentation](https://www.typescriptlang.org/docs/)
 - [Vite Documentation](https://vitejs.dev/guide/)

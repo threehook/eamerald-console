@@ -3,7 +3,7 @@ import { useMutation } from '@tanstack/react-query'
 import { useClientConfig } from '../../services/EnvConfigProvider'
 import { useBaseClient } from '../clients/base'
 
-export const useTopazLogin = () => {
+export const useEameraldLogin = () => {
   const { discoveryServiceUrl } = useClientConfig()
   const { get } = useBaseClient(discoveryServiceUrl)
 

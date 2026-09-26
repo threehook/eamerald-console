@@ -209,7 +209,7 @@ const PolicyEvaluatorContent: React.FC<PolicyEvaluatorProps> = ({
     editor: editor.IStandaloneCodeEditor,
     monaco: Monaco,
   ) => {
-    monaco.editor.setTheme('topaz')
+    monaco.editor.setTheme('eamerald')
     editorRef.current = editor
   }
 

@@ -62,7 +62,7 @@ export const handlers = [
             directoryServiceUrl: 'https://localhost:9393',
             directoryTenantId: '',
             directoryWriterServiceUrl: 'https://localhost:9393',
-            name: 'Topaz Config',
+            name: 'Eamerald Config',
           },
         ],
         readOnly: true,

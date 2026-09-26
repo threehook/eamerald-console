@@ -45,7 +45,7 @@ jobs:
           NODE_OPTIONS: --max-old-space-size=4096
         run: |
           PUBLIC_URL="/public" yarn build
-          tar -czf dist-topaz-console-${{ github.ref_name }}.tar.gz dist
+          tar -czf dist-eamerald-console-${{ github.ref_name }}.tar.gz dist
       -
         name: Create Release
         id: create_release
@@ -53,11 +53,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          artifacts: "dist-topaz-console-${{ github.ref_name }}.tar.gz"
+          artifacts: "dist-eamerald-console-${{ github.ref_name }}.tar.gz"
           draft: false
           prerelease: false
 
-  # Uncomment after go-topaz-ui is updated to fetch releases from topaz-console
+  # Uncomment after go-eamerald-ui is updated to fetch releases from eamerald-console
   # trigger:
   #   runs-on: ubuntu-latest
   #   needs: release
@@ -72,13 +72,13 @@ jobs:
   #         secrets: |
   #             kv/data/github  "READ_WRITE_TOKEN"    | READ_WRITE_TOKEN;
   #     -
-  #       name: Update go-topaz-ui
+  #       name: Update go-eamerald-ui
   #       run: |
   #         curl -XPOST -H "Authorization: token ${READ_WRITE_TOKEN}" \
   #         --fail-with-body \
   #         -H "Accept: application/vnd.github.everest-preview+json" \
   #         -H "Content-Type: application/json" \
-  #         https://api.github.com/repos/aserto-dev/go-topaz-ui/actions/workflows/update.yaml/dispatches \
+  #         https://api.github.com/repos/aserto-dev/go-eamerald-ui/actions/workflows/update.yaml/dispatches \
   #         --data '{"ref": "main", "inputs": {"version": "${{ github.ref_name }}" }}'
 
   bump_version:

@@ -1,6 +1,6 @@
 import { Nav } from 'react-bootstrap'
 
-import TopazLogo from '../../assets/topaz.svg'
+import EameraldLogo from '../../assets/eamerald-logo.svg'
 import { useConfig } from '../../services/ConfigProvider/hooks'
 import BaseNavBar, { BaseNavLink } from '../common/BaseNavBar'
 
@@ -13,7 +13,7 @@ export const NavBar = () => {
         expand="xl"
         logo={
           <a href="/ui/directory/model">
-            <img alt="topaz" height={48} src={TopazLogo} />
+            <img alt="eamerald" height={48} src={EameraldLogo} />
           </a>
         }
       >

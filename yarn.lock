@@ -9590,9 +9590,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"topaz-console@workspace:.":
+"eamerald-console@workspace:.":
   version: 0.0.0-use.local
-  resolution: "topaz-console@workspace:."
+  resolution: "eamerald-console@workspace:."
   dependencies:
     "@codecov/vite-plugin": "npm:^1.9.1"
     "@eslint/js": "npm:^9.21.0"

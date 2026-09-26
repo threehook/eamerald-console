@@ -3,7 +3,7 @@ import { Navbar } from 'react-bootstrap'
 import { NavLink, useMatch, useResolvedPath } from 'react-router'
 
 import separator from '../../../assets/separator.svg'
-import Logo from '../../../assets/topaz-logo.svg'
+import Logo from '../../../assets/eamerald-logo.svg'
 import { NavBarBrand, NavBarContainer, Separator } from './styles'
 
 type BaseNavBarProps = {

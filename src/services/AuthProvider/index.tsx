@@ -1,6 +1,6 @@
 import React, { PropsWithChildren, useCallback } from 'react'
 
-import { useTopazLogin } from '../../api/internal/login'
+import { useEameraldLogin } from '../../api/internal/login'
 import { RpcStatus } from '../../types/directory'
 import { useConfig } from '../ConfigProvider/hooks'
 import AnonymousProvider from './AnonymousProvider'
@@ -8,7 +8,7 @@ import ApiKeyProvider from './ApiKeyProvider'
 
 const AuthProvider: React.FC<PropsWithChildren> = ({ children }) => {
   const { authenticationType } = useConfig()
-  const { mutateAsync: login } = useTopazLogin()
+  const { mutateAsync: login } = useEameraldLogin()
   const loginFunc = useCallback(
     async (apiKey: string): Promise<Error | RpcStatus | undefined> => {
       try {

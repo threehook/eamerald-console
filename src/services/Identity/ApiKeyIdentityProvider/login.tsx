@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
-import Logo from '../../../assets/topaz-logo.svg'
+import Logo from '../../../assets/eamerald-logo.svg'
 import Button from '../../../components/common/Button'
 import Input from '../../../components/common/Input'
 import { theme } from '../../../theme'
@@ -112,7 +112,7 @@ const ApiKeyLogin: React.FC<ApiLoginProps> = ({ loginFunc, setApiKey }) => {
       </Header>
       <Body>
         <LoginBoxContainer>
-          <WelcomeContainer>Welcome to Topaz Console!</WelcomeContainer>
+          <WelcomeContainer>Welcome to Eamerald Console!</WelcomeContainer>
           <ContentContainer>
             Enter your API key to securely access your account. If you don't
             have an API key yet, please contact your Administrator to obtain

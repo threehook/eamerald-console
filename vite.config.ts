@@ -20,7 +20,7 @@ export default defineConfig({
   plugins: [
     react(),
     codecovVitePlugin({
-      bundleName: "topaz-console",
+      bundleName: "eamerald-console",
       enableBundleAnalysis: process.env.CODECOV_TOKEN !== undefined,
       uploadToken: process.env.CODECOV_TOKEN,
     }),

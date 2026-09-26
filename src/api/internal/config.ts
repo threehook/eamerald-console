@@ -4,7 +4,7 @@ import { RpcStatus } from "../../types/directory"
 import { Configurations, QueryKeys } from "../../types/general"
 import { useConfigClient } from "../clients/configClient"
 
-export const useTopazConfig = (
+export const useEameraldConfig = (
   options?: Omit<
     UseQueryOptions<Configurations, RpcStatus, Configurations, QueryKeys[]>,
     'queryFn' | 'queryKey' | 'retry' | 'staleTime'

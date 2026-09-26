@@ -33,7 +33,7 @@ self.MonacoEnvironment = {
   },
 }
 
-const VsCodeTopaz = [
+const VsCodeEamerald = [
   { foreground: '#5c6773', token: '' },
   { foreground: theme.mojoAccent2, token: 'invalid' },
   { fontStyle: 'italic', token: 'emphasis' },
@@ -104,7 +104,7 @@ const MonacoEditor: React.FC<MonacoEditorProps> = ({
   const handleEditorWillMount = (monaco: Monaco) => {
     monaco.editor.getModels().forEach((model) => model.dispose())
     beforeMount?.(monaco)
-    monaco.editor.defineTheme('topaz', {
+    monaco.editor.defineTheme('eamerald', {
       base: 'vs-dark',
       colors: {
         'editor.background': theme.primaryBlack,
@@ -120,7 +120,7 @@ const MonacoEditor: React.FC<MonacoEditorProps> = ({
         'editorIndentGuide.background': theme.indogo20,
       },
       inherit: true,
-      rules: [...VsCodeTopaz, ...(themeRules || [])],
+      rules: [...VsCodeEamerald, ...(themeRules || [])],
     })
   }
 
