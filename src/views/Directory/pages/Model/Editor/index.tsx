@@ -1,5 +1,5 @@
 import { editor } from 'monaco-editor/esm/vs/editor/editor.api'
-import { configureMonacoYaml, SchemasSettings } from 'monaco-yaml'
+import { configureMonacoYaml, JSONSchema, SchemasSettings } from 'monaco-yaml'
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import YAML from 'yaml'
 
@@ -13,6 +13,7 @@ import Button from '../../../../../components/common/Button'
 import MonacoEditor from '../../../../../components/common/MonacoEditor'
 import { useDirectoryModelContext } from '../../../../../services/DirectoryContextProvider/hooks'
 import { useShowError } from '../../../../../services/ErrorModalProvider'
+import manifestSchema from './manifest.schema.json'
 import {
   ButtonsContainer,
   ControlsContainer,
@@ -26,7 +27,8 @@ const ModelEditor: React.FC = () => {
   const defaultSchema: SchemasSettings = useMemo(() => {
     return {
       fileMatch: ['file://**/manifest.yaml'],
-      uri: 'https://www.topaz.sh/schema/manifest.json',
+      schema: manifestSchema as JSONSchema,
+      uri: 'https://www.eamerald.sh/schema/manifest.json',
     }
   }, [])
 
@@ -113,14 +115,14 @@ const ModelEditor: React.FC = () => {
 
   const handleEditorWillMount = (monaco: Monaco) => {
     configureMonacoYaml(monaco, {
-      enableSchemaRequest: true,
+      enableSchemaRequest: false,
       schemas: [defaultSchema],
     })
   }
 
   const handleEditorDidMount = useCallback(
     (editor: editor.IStandaloneCodeEditor, monaco: Monaco) => {
-      monaco.editor.setTheme('topaz')
+      monaco.editor.setTheme('eamerald')
       editorRef.current = editor
       editorRef.current?.onDidChangeModelContent(() => {
         handleOnChange(editorRef.current?.getValue())
