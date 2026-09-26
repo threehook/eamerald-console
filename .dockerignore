@@ -1,0 +1,10 @@
+node_modules
+.git
+.idea
+.yarn/cache
+.yarn/install-state.gz
+dist
+coverage
+k8s
+!k8s/nginx.conf
+*.log

@@ -1,0 +1,33 @@
+Eamerald console is deploying into namespace {{ .Release.Namespace }}.
+
+Check rollout status:
+  kubectl -n {{ .Release.Namespace }} rollout status deployment/{{ .Release.Name }}
+
+{{- if eq .Values.service.type "LoadBalancer" }}
+
+Docker Desktop maps LoadBalancer services to localhost, so once EXTERNAL-IP
+shows up (may take a few seconds):
+  kubectl -n {{ .Release.Namespace }} get svc {{ .Release.Name }}
+
+Open the console:
+  http://localhost:{{ .Values.service.port }}
+{{- else }}
+
+Port-forward to reach it locally:
+  kubectl -n {{ .Release.Namespace }} port-forward svc/{{ .Release.Name }} {{ .Values.service.port }}:{{ .Values.service.port }}
+
+Then open:
+  http://localhost:{{ .Values.service.port }}
+{{- end }}
+
+This chart deploys the console SPA only. It expects an Eamerald backend to
+already be running separately and reachable from the browser at:
+
+  {{ .Values.backend.discoveryServiceUrl }}
+
+That's true regardless of how the backend itself is deployed or topologized.
+
+The console's actual API base URL (VITE_REACT_APP_DISCOVERY_SERVICE_URL) is
+baked into the image at `docker build` time from .env, and should match the
+address above. Edit .env and rebuild the image if your backend is reachable
+somewhere else.

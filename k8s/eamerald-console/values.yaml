@@ -1,0 +1,30 @@
+# Default values for the eamerald-console chart: the static SPA served behind nginx.
+image:
+  # For local iteration on Docker Desktop's Kubernetes, build under a fresh, unique tag every run
+  # (e.g. `eamerald-console:dev-$(git rev-parse --short HEAD)-$(date +%s)`) and pass it via
+  # `--set image.tag=...`. With pullPolicy: IfNotPresent (needed since this image is never pushed
+  # to a registry), Docker Desktop's Kubernetes caches images by tag *separately* from the Docker
+  # CLI's daemon-visible store, so rebuilding under a reused static tag can silently never reach
+  # the running Pod.
+  repository: eamerald-console
+  tag: dev
+  pullPolicy: IfNotPresent
+
+replicaCount: 1
+
+service:
+  # Docker Desktop's Kubernetes maps LoadBalancer services to localhost automatically, so this
+  # "just works" without port-forwarding. Set to ClusterIP on clusters without that (use
+  # `kubectl port-forward` instead).
+  type: LoadBalancer
+  port: 8090
+
+# This chart deploys the console SPA only - it does not manage the Eamerald backend, which is
+# assumed to already be running and reachable from the browser at this address, however it's
+# deployed. Documentation only (shown in NOTES.txt); not templated into the Deployment. The
+# console's actual API base URL (VITE_REACT_APP_DISCOVERY_SERVICE_URL) is baked into the image at
+# `docker build` time from .env, so keep this value in sync with .env rather than editing it here.
+backend:
+  discoveryServiceUrl: "https://localhost:8080"
+
+resources: {}
